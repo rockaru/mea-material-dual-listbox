@@ -8,10 +8,10 @@
   "files": [],
   "references": [
     {
-      "path": "./projects/material-dual-listbox/tsconfig.lib.json"
+      "path": "./projects/mea-material-dual-listbox/tsconfig.lib.json"
     },
     {
-      "path": "./projects/material-dual-listbox/tsconfig.spec.json"
+      "path": "./projects/mea-material-dual-listbox/tsconfig.spec.json"
     },
     {
       "path": "./projects/demo/tsconfig.app.json"

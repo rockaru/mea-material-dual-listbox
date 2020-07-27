@@ -16,9 +16,9 @@
       "dom"
     ],
     "paths": {
-      "material-dual-listbox": [
-        "dist/material-dual-listbox/material-dual-listbox",
-        "dist/material-dual-listbox"
+      "mea-material-dual-listbox": [
+        "dist/mea-material-dual-listbox/mea-material-dual-listbox",
+        "dist/mea-material-dual-listbox"
       ]
     }
   }

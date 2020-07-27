@@ -1,6 +1,6 @@
 {
   "name": "mea-material-dual-listbox",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Simple dual listbox component to use with your Angular 10 App with Angular Material and CDK Drag and Drop.",
   "homepage": "https://github.com/rockaru/material-dual-listbox/blob/master/README.md",
   "bugs": {
@@ -17,8 +17,7 @@
   "peerDependencies": {
     "@angular/common": "^10.0.0",
     "@angular/core": "^10.0.0",
-    "@angular/material": "^10.0.0",
-    "@angular/cdk": "^10.0.0"
+    "@angular/material": "^10.0.0"
   },
   "dependencies": {
     "tslib": "^2.0.0"
