@@ -1,0 +1,89 @@
+<style>
+    .rck-title{
+        margin-bottom: 0px;
+    }
+    .rck-list-container{
+        display: flex;
+        flex-wrap: nowrap;
+    }
+    .rck-container {
+        width: 220px;
+        max-width: 100%;
+        margin: 5px 5px 5px 5px;
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    .rck-container:last-child{
+        margin-right: 25px;
+    }
+
+    .rck-list {
+        border: solid 1px #ccc;
+        min-height: 60px;
+        background: white;
+        border-radius: 4px;
+        overflow: hidden;
+        display: block;
+    }
+
+    .rck-box {
+        padding: 20px 20px;
+        border-bottom: solid 1px #ccc;
+        color: rgba(0, 0, 0, 0.87);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        box-sizing: border-box;
+        cursor: move;
+        background: white;
+        font-size: 14px;
+    }
+
+
+    .rck-box:last-child {
+        border: none;
+    }
+    input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
+  display: none;
+}
+</style>
+
+
+<div [ngStyle]="{'max-height': '100%','max-width': width, 'min-width': width }">
+
+    <div cdkDropListGroup class="rck-list-container">
+        <div class="rck-container">
+            <h3 class="rck-title" *ngIf="header">{{itemsTitle}}</h3>
+            <mat-form-field appearance="standard"  *ngIf="filter">
+                <mat-label>{{searchPlaceholder}} {{itemsTitle}}</mat-label>
+                <input matInput [ngModel]="filterText" autocomplete="off"
+                (ngModelChange)="filterItems($event)">
+                <mat-placeholder>{{searchPlaceholder}} {{itemsTitle}}</mat-placeholder>
+                
+            </mat-form-field>
+            <mat-list>
+                <mat-list-item class="rck-box" *ngFor="let item of availableFiltered" (click)="clickedItem(item[display],'destination','source')"><mat-icon *ngIf="showIcons" [style.color]="addIconColor" fxHide.xs mat-list-icon>{{addIcon}}</mat-icon> {{item[display]}}</mat-list-item>
+            </mat-list>
+
+        </div>
+        <div class="rck-container">
+            <h3 class="rck-title" *ngIf="header">{{selectedItemsTitle}}</h3>
+            <mat-form-field appearance="standard" *ngIf="filter">
+                <mat-label>{{searchPlaceholder}} {{selectedItemsTitle}}</mat-label>
+                <input matInput [ngModel]="filterSelectedText" autocomplete="off"
+                (ngModelChange)="filterSelectedItems($event)"
+                >
+                <mat-placeholder>{{searchPlaceholder}} {{itemsTitle}}</mat-placeholder>
+               
+            </mat-form-field>
+            <mat-list>
+                <mat-list-item class="rck-box" *ngFor="let item of confirmedFiltered" (click)="clickedItem(item[display],'source','destination')" cdkDrag><mat-icon *ngIf="showIcons" [style.color]="removeIconColor" fxHide.xs mat-list-icon>{{removeIcon}}</mat-icon> {{item[display]}}</mat-list-item>
+            </mat-list>
+           
+        </div>
+        
+    </div>
+</div>
